@@ -51,7 +51,7 @@ class ScoreLogger:
                            show_goal=False,
                            show_trend=False,
                            show_legend=False)
-            exit()
+            #exit()
 
     def _save_png(self, input_path, output_path, x_label, y_label, average_of_n_last, show_goal, show_trend, show_legend):
         x = []

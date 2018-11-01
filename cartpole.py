@@ -9,7 +9,7 @@ from keras.optimizers import Adam
 
 from scores.score_logger import ScoreLogger
 
-ENV_NAME = "CartPole-v1"
+ENV_NAME = "CartPole-v2"
 
 GAMMA = 0.95
 LEARNING_RATE = 0.001
@@ -47,6 +47,7 @@ class DQNSolver:
 
     def experience_replay(self):
         if len(self.memory) < BATCH_SIZE:
+            print "memory is too small, so just quit()"
             return
         batch = random.sample(self.memory, BATCH_SIZE)
         for state, action, reward, state_next, terminal in batch:
